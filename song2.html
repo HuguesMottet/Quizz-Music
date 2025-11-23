@@ -16,7 +16,7 @@
         font-family: Arial, sans-serif;
     }
     button {
-        margin-top: 20px;
+        margin: 10px;
         padding: 10px 20px;
         font-size: 16px;
         cursor: pointer;
@@ -25,15 +25,24 @@
 </head>
 <body>
 <h2>Écoute la musique !</h2>
+
 <button onclick="playMusic()">Démarrer la musique</button>
+<button onclick="stopMusic()">Arrêter la musique</button>
 
 <audio id="musique">
     <source src="SM.mp3" type="audio/mpeg">
+    Votre navigateur ne supporte pas la lecture audio.
 </audio>
 
 <script>
 function playMusic() {
     document.getElementById('musique').play();
+}
+
+function stopMusic() {
+    const audio = document.getElementById('musique');
+    audio.pause();
+    audio.currentTime = 0; // revient au début
 }
 </script>
 </body>
