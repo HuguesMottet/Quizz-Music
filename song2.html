@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Quizz Musique</title>
-    <style>
-        body {
-            background-color: black;
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-family: Arial, sans-serif;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Quizz Musique</title>
+<style>
+    body {
+        background-color: black;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+    button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+</style>
 </head>
 <body>
-    <h2>Écoute la musique !</h2>
+<h2>Écoute la musique !</h2>
+<button onclick="playMusic()">Démarrer la musique</button>
 
-    <!-- Audio invisible -->
-    <audio autoplay>
-        <source src="SM.mp3" type="audio/mpeg">
-        Votre navigateur ne supporte pas la lecture audio.
-    </audio>
+<audio id="musique">
+    <source src="SM.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function playMusic() {
+    document.getElementById('musique').play();
+}
+</script>
 </body>
 </html>
